@@ -2,7 +2,7 @@
 
 Relance l'application avec mvn spring-boot:run
 
-Et go sur : http://localhost:8080/doctor
+Et go sur : http://localhost:8080
 
 Test de la maniere suivante : 
 
