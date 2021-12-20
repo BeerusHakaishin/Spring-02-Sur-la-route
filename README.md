@@ -4,7 +4,7 @@ Relance l'application avec mvn spring-boot:run
 
 Et go sur : http://localhost:8080/doctor
 
-Comme demandé dans la quete : 
+Test de la maniere suivante : 
 
 http://localhost:8080/doctor/9 à 13
 - doctorId >= 9 && doctorId <= 13 renvoit le nom du docteur et son ID ;
