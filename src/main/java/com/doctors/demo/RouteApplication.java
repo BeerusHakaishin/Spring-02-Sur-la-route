@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.doctors.demo.model.Doctor;
+
 
 @Controller
 @SpringBootApplication
@@ -18,19 +20,19 @@ public class RouteApplication {
 		SpringApplication.run(RouteApplication.class, args);
 	}
 	
-	@RequestMapping("/doctor/{doctorId}")
+	@RequestMapping("/doctor/{id}")
 	@ResponseBody
-    public String doctor1(@PathVariable int doctorId) {
-	    String[] doctors = {"Christopher Eccleston", "David Tennant", "Matt Smith", "Peter Capaldi", "Jodie Whittaker"};
-	    
-        if (doctorId >= 9 && doctorId < 13) {
-            return "Docteur n°" + doctorId + " : " + doctors[doctorId - 9];
-        }
-        if (doctorId >= 1 && doctorId <= 8) {
+    public Doctor doctor(@PathVariable int id) {
+	       
+     // El Famoso JSON for you 
+    	if (id == 13) {
+    		return new Doctor(13, "Jodie Whittaker");}
+    	
+        if (id >= 1 && id <= 12) {
             throw new ResponseStatusException(HttpStatus.SEE_OTHER, "Test avec un autre id");
         }
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossible de récupérer l'incarnation...");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossible de récupérer l'incarnation" + id);
         }
     }
 }
