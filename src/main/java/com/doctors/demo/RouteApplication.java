@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
 
-
 @Controller
 @SpringBootApplication
 public class RouteApplication {
@@ -24,7 +23,7 @@ public class RouteApplication {
     public String doctor1(@PathVariable int doctorId) {
 	    String[] doctors = {"Christopher Eccleston", "David Tennant", "Matt Smith", "Peter Capaldi", "Jodie Whittaker"};
 	    
-        if (doctorId >= 9 && doctorId <= 13) {
+        if (doctorId >= 9 && doctorId < 13) {
             return "Docteur n°" + doctorId + " : " + doctors[doctorId - 9];
         }
         if (doctorId >= 1 && doctorId <= 8) {
