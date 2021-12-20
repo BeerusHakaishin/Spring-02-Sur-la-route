@@ -26,7 +26,8 @@ public class RouteApplication {
 	       
      // El Famoso JSON for you 
     	if (id == 13) {
-    		return new Doctor(13, "Jodie Whittaker");}
+    		return new Doctor(13, "Jodie Whittaker");
+	}
     	
         if (id >= 1 && id <= 12) {
             throw new ResponseStatusException(HttpStatus.SEE_OTHER, "Test avec un autre id");
